@@ -1,9 +1,12 @@
-const rootPath = path.join(__dirname, '..')
+const path = require('path')
 const { isProd, isDev } = require('./utils/enviroment')
+
+// environment configs
 const mode = isProd ? 'production' : 'development'
 const watch = isDev
 const devtool = isDev ? 'source-map' : false
 
+const rootPath = path.join(__dirname, '..')
 module.exports = {
   entry: path.join(rootPath , 'src', 'index.js'),
   output: {
