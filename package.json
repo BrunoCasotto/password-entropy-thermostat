@@ -4,8 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --collect-coverage",
+    "test:watch": "jest --watch",
+    "watch": "cross-env NODE_ENV=development webpack --config ./webpack/config.js",
+    "build": "cross-env NODE_ENV=production webpack -p --config ./webpack/config.js"
   },
-  "author": "",
+  "files": [
+    "dist/*"
+  ],
+  "keywords": [
+    "password",
+    "thermostat",
+    "entropy",
+    "unpredictable",
+    "strength",
+    "security",
+    "javascript",
+    "client"
+  ],
+  "author": "Bruno Casotto",
   "license": "ISC"
 }
