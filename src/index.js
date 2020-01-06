@@ -151,4 +151,4 @@ class PassEntropyThermostat {
   }
 }
 
-module.exports = new PassEntropyThermostat()
+export default new PassEntropyThermostat()

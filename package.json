@@ -2,7 +2,6 @@
   "name": "password-entropy-thermostat",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --collect-coverage",
@@ -10,6 +9,7 @@
     "watch": "cross-env NODE_ENV=development webpack --config ./webpack/config.js",
     "build": "cross-env NODE_ENV=production webpack -p --config ./webpack/config.js"
   },
+  "main" : "src/index",
   "files": [
     "dist/*"
   ],
