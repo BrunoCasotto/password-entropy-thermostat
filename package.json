@@ -9,7 +9,7 @@
     "watch": "cross-env NODE_ENV=development webpack --config ./webpack/config.js",
     "build": "cross-env NODE_ENV=production webpack -p --config ./webpack/config.js"
   },
-  "main": "src/index",
+  "main": "dist/PassEntropyThermostat.js",
   "files": [
     "dist/*"
   ],
