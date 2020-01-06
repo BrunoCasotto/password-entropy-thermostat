@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "8.11.3"
+branches:
+  only:
+  - master
+install:
+  - npm install -g codecov
+  - npm install identity-obj-proxy@3.0.0
+jobs:
+  include:
+    - stage: test
+      script: npm run test:coverage && codecov
+    - stage: build
+      script: npm run build
