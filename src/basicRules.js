@@ -16,7 +16,7 @@ export const hasCapitalLetter =  (password) => {
 }
 
 export const hasSmallLetter =  (password) => {
-  return password.search(/[A-Z]/) != -1
+  return password.search(/[a-z]/) != -1
 }
 
 export const hasLetter =  (password) => {
