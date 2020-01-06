@@ -7,3 +7,53 @@
   <a href="https://codecov.io/gh/BrunoCasotto/vanilla-js-chat"><img src="https://codecov.io/gh/BrunoCasotto/password-entropy-thermostat/branch/master/graph/badge.svg" alt="CodeCov"></a></p>
 
 Um projeto desenvolvido em javascript que calcula a complexidade de uma senha.
+
+
+## Utilização
+Instalação:
+
+``` npm i --save password-entropy-thermostat ```
+
+Uso:
+
+
+```
+import PasswordEntropyThermostat from 'password-entropy-thermostat'
+const result = PasswordEntropyThermostat.measurePassword('myPassword')
+```
+
+
+Resposta da lib
+
+```
+Password level:
+{
+    "results": [
+        {
+            "method": "minLengthValue",
+            "value": 0.1
+        },
+        {
+            "method": "lengthValue",
+            "value": 0.2
+        },
+        {
+            "method": "hasNumberAndLetter",
+            "value": 0.2
+        },
+        {
+            "method": "hasSpecialChar",
+            "value": 0
+        },
+        {
+            "method": "capitalAndSmallChar",
+            "value": 0
+        },
+        {
+            "method": "sequenceAndPatterns",
+            "value": 0
+        }
+    ],
+    "value": 0.5
+}
+```
