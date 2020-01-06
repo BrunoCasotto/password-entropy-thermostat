@@ -22,6 +22,43 @@ class PassEntropyThermostat {
     this.capitalAndSmallChar = 0.2
   }
 
+  sumWeightConfig(config) {
+    return config.minLengthValue +
+    config.lengthValue +
+    config.hasNumberAndLetter +
+    config.hasSpecialChar +
+    config.capitalAndSmallChar +
+    config.sequenceAndPatterns
+  }
+
+  setWeight(config) {
+    if(!config || typeof config !== 'object') {
+      throw 'config should be an object'
+    }
+
+    if(this.sumWeightConfig(config) < 1 || this.sumWeightConfig(config) > 1) {
+      throw 'the sum of weight should be between 0 - 1'
+    }
+
+    this.minLengthWeight = typeof config.minLengthValue === 'number' ?
+    config.minLengthValue : this.minLengthWeight
+
+    this.lengthWeight = typeof config.lengthValue === 'number' ?
+    config.lengthValue : this.lengthWeight
+
+    this.hasNumberAndLetter = typeof config.hasNumberAndLetter === 'number' ?
+    config.hasNumberAndLetter : this.minLengthWeight
+
+    this.especialCharWeight = typeof config.hasSpecialChar === 'number' ?
+    config.hasSpecialChar : this.especialCharWeight
+
+    this.capitalAndSmallChar = typeof config.capitalAndSmallChar === 'number' ?
+    config.capitalAndSmallChar : this.capitalAndSmallChar
+
+    this.patternsWeight = typeof config.sequenceAndPatterns === 'number' ?
+    config.sequenceAndPatterns : this.patternsWeight
+  }
+
   /**
    * Method to calculate length value based on length wheigt(min: 0, max: minLength)
    */
