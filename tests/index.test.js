@@ -10,7 +10,8 @@ describe('Password Entropy basics', () => {
     const password = faker.random.word()
     const passwordLevel = PassEntropyThermostat.measurePassword(password)
 
-    expect(typeof passwordLevel).toBe('number')
+    expect(typeof passwordLevel).toBe('object')
+    expect(typeof passwordLevel.value).toBe('number')
   })
 
   test('measurePassword method returns a throw when password is null or empty', () => {
