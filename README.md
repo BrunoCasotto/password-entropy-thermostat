@@ -57,3 +57,19 @@ Password level:
     "value": 0.5
 }
 ```
+
+Configurar peso dos cálculos <br>
+Para configurar quanto cada validação corresponde para segurança da senha basta chamar o método setWeight e passar o objeto de configuração com os pesos. (valor máximo somado deve ser 1).
+
+```
+const config = {
+    minLengthValue: 0.2,
+    lengthValue: 0.2,
+    hasNumberAndLetter: 0.2,
+    hasSpecialChar: 0.2,
+    capitalAndSmallChar: 0.1,
+    sequenceAndPatterns: 0.1
+}
+
+PassEntropyThermostat.setWeight(config)
+```
