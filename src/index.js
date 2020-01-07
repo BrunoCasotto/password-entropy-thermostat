@@ -23,19 +23,19 @@ class PassEntropyThermostat {
   }
 
   sumWeightConfig(config) {
-    return config.minLengthValue +
+    return parseFloat(config.minLengthValue +
     config.lengthValue +
     config.hasNumberAndLetter +
     config.hasSpecialChar +
     config.capitalAndSmallChar +
-    config.sequenceAndPatterns
+    config.sequenceAndPatterns).toFixed(2)
   }
 
   setWeight(config) {
     if(!config || typeof config !== 'object') {
       throw 'config should be an object'
     }
-
+    console.log(this.sumWeightConfig(config))
     if(this.sumWeightConfig(config) < 1 || this.sumWeightConfig(config) > 1) {
       throw 'the sum of weight should be between 0 - 1'
     }
